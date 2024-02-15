@@ -1,0 +1,34 @@
+@startuml MCD
+
+left to right direction
+actor Employeur as e
+actor Candidat as c
+
+package Systeme_Ohipa {
+
+    package Annonces{
+        usecase "Voir toutes les annonces" as UCA1
+        usecase "Créer une annonce" as UCA2
+        usecase "Candidater une annonce" as UCA3
+        usecase "Remplir les champs obligatoires" as UCA4
+        usecase "Annuler" as UCA5
+        usecase "Confirmer" as UCA6
+    }
+    package Candidatures{
+        usecase "Voir toutes les candidatures" as UCC1
+    }
+
+}
+
+c --> UCA1
+c --> UCA3
+UCA3 .. UCA4
+UCA4 ..> UCA5
+UCA4 ..> UCA6
+e --> UCA1
+e --> UCA2
+UCA2 .. UCA4
+c --> UCC1
+e --> UCC1
+
+@enduml

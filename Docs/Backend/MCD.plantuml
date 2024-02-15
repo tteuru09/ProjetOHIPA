@@ -1,0 +1,28 @@
+@startuml MCD
+
+class Annonce{
+    -id_annonce : int
+    +titre : string
+    +entreprise : string
+    +ville : string
+    +descriptif : text
+    +type_contrat : string
+    +nb_visite : int                                                                
+}
+
+class Candidature{
+    -id_candidature : int
+    +nom_candidat : string
+    +prenom_candidat : string
+    +date_candidature : date
+    +cv : file
+    +lm : file
+}
+
+interface Candidater 
+
+
+Annonce -- Candidater : 0,n
+Candidater -- Candidature : 1,1
+
+@enduml

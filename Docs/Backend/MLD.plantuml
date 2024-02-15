@@ -1,0 +1,25 @@
+@startuml MLD
+
+class Annonce{
+    -id_annonce : int
+    +titre : string
+    +entreprise : string
+    +ville : string
+    +descriptif : text
+    +type_contrat : string
+    +nb_visite : int                                                                
+}
+
+class Candidature{
+    -id_candidature : int
+    #id_annonce
+    +nom_candidat : string
+    +prenom_candidat : string
+    +date_candidature : date
+    +cv : file
+    +lm : file
+}
+
+
+
+@enduml
