@@ -20,6 +20,17 @@ class Candidature{
     +lm : file
 }
 
+class Documents{
+    -id_document : int
+    #id_annonce
+    #id_candidature
+    +nom : string
+    +type : string
+    +data : mediumblob
+    +createdAt : date
+    +updatedAt : date
+}
+
 
 
 @enduml
