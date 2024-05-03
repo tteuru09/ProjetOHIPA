@@ -7,22 +7,43 @@ class Annonce{
     +ville : string
     +descriptif : text
     +type_contrat : string
-    +nb_visite : int                                                                
+    +nb_visite : int   
+    +createdAt : date
+    +updatedAt : date  
 }
 
 class Candidature{
     -id_candidature : int
     +nom_candidat : string
     +prenom_candidat : string
-    +date_candidature : date
-    +cv : file
-    +lm : file
+    +email: string
+    +createdAt : date
+    +updatedAt : date
+}
+
+class Documents{
+    -id_document : int
+    +nom : string
+    +type_data : string
+    +type_doc : string
+    +data : mediumblob
+    +createdAt : date
+    +updatedAt : date
 }
 
 interface Candidater 
+interface Possede 
+interface Illustration 
 
 
 Annonce -- Candidater : 0,n
 Candidater -- Candidature : 1,1
 
+Annonce -- Illustration : 0,1
+Illustration -- Documents : 1,1
+
+Candidature -- Possede : 1,n
+Possede -- Documents : 1,1
+
 @enduml
+
