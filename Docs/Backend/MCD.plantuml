@@ -16,7 +16,7 @@ class Candidature{
     -id_candidature : int
     +nom_candidat : string
     +prenom_candidat : string
-    +date_candidature : date
+    +email: string
     +createdAt : date
     +updatedAt : date
 }
